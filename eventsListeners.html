@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Listeners and Handlers</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        h1, h2, h3 {
+            color: #0056b3;
+        }
+        h1 {
+            border-bottom: 2px solid #0056b3;
+            padding-bottom: 5px;
+        }
+        .event-type {
+            margin-bottom: 20px;
+        }
+        .event-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .event-list li {
+            background: #fff;
+            margin: 5px 0;
+            padding: 10px;
+            border-left: 5px solid #0056b3;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+        th {
+            background-color: #0056b3;
+            color: white;
+        }
+        #events {
+    display: inline-block;
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #0056b3;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#events:hover {
+    background-color: #003d80;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#events:active {
+    background-color: #002b59;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+    </style>
+</head>
+<body>
+
+    <h1>Event Listeners and Handlers</h1>
+
+    <div class="event-type">
+        <h2>Types of Event Listeners</h2>
+        <p>Event listeners are added using the <code>addEventListener</code> method and can be applied to a variety of events. Here are some common types:</p>
+
+        <h3>Mouse Events</h3>
+        <ul class="event-list">
+            <li><strong>click:</strong> Fired when an element is clicked.</li>
+            <li><strong>dblclick:</strong> Fired when an element is double-clicked.</li>
+            <li><strong>mouseover:</strong> Fired when the mouse pointer is moved onto an element.</li>
+            <li><strong>mouseout:</strong> Fired when the mouse pointer is moved out of an element.</li>
+            <li><strong>mousemove:</strong> Fired when the mouse pointer is moved within an element.</li>
+        </ul>
+
+        <h3>Keyboard Events</h3>
+        <ul class="event-list">
+            <li><strong>keydown:</strong> Fired when a key is pressed down.</li>
+            <li><strong>keyup:</strong> Fired when a key is released.</li>
+            <li><strong>keypress:</strong> Fired when a key is pressed down and released (deprecated).</li>
+        </ul>
+
+        <h3>Form Events</h3>
+        <ul class="event-list">
+            <li><strong>submit:</strong> Fired when a form is submitted.</li>
+            <li><strong>focus:</strong> Fired when an element gains focus.</li>
+            <li><strong>blur:</strong> Fired when an element loses focus.</li>
+            <li><strong>change:</strong> Fired when the value of an element changes.</li>
+        </ul>
+
+        <h3>Window Events</h3>
+        <ul class="event-list">
+            <li><strong>load:</strong> Fired when the whole page has loaded.</li>
+            <li><strong>resize:</strong> Fired when the window is resized.</li>
+            <li><strong>scroll:</strong> Fired when the document view is scrolled.</li>
+        </ul>
+
+        <h3>Touch Events</h3>
+        <ul class="event-list">
+            <li><strong>touchstart:</strong> Fired when a touch point is placed on the touch surface.</li>
+            <li><strong>touchmove:</strong> Fired when a touch point is moved along the touch surface.</li>
+            <li><strong>touchend:</strong> Fired when a touch point is removed from the touch surface.</li>
+        </ul>
+
+        <h3>Custom Events</h3>
+        <ul class="event-list">
+            <li>Custom events can be created and listened to using the <code>CustomEvent</code> constructor.</li>
+        </ul>
+    </div>
+
+    <div class="event-type">
+        <h2>Types of Event Handlers</h2>
+        <p>Event handlers are assigned directly to an element's event properties. Here are some common types:</p>
+
+        <h3>Mouse Event Handlers</h3>
+        <ul class="event-list">
+            <li><strong>onclick:</strong> Handles the click event.</li>
+            <li><strong>ondblclick:</strong> Handles the double-click event.</li>
+            <li><strong>onmouseover:</strong> Handles the mouseover event.</li>
+            <li><strong>onmouseout:</strong> Handles the mouseout event.</li>
+            <li><strong>onmousemove:</strong> Handles the mousemove event.</li>
+        </ul>
+
+        <h3>Keyboard Event Handlers</h3>
+        <ul class="event-list">
+            <li><strong>onkeydown:</strong> Handles the keydown event.</li>
+            <li><strong>onkeyup:</strong> Handles the keyup event.</li>
+            <li><strong>onkeypress:</strong> Handles the keypress event (deprecated).</li>
+        </ul>
+
+        <h3>Form Event Handlers</h3>
+        <ul class="event-list">
+            <li><strong>onsubmit:</strong> Handles the submit event.</li>
+            <li><strong>onfocus:</strong> Handles the focus event.</li>
+            <li><strong>onblur:</strong> Handles the blur event.</li>
+            <li><strong>onchange:</strong> Handles the change event.</li>
+        </ul>
+
+        <h3>Window Event Handlers</h3>
+        <ul class="event-list">
+            <li><strong>onload:</strong> Handles the load event.</li>
+            <li><strong>onresize:</strong> Handles the resize event.</li>
+            <li><strong>onscroll:</strong> Handles the scroll event.</li>
+        </ul>
+
+        <h3>Touch Event Handlers</h3>
+        <ul class="event-list">
+            <li><strong>ontouchstart:</strong> Handles the touchstart event.</li>
+            <li><strong>ontouchmove:</strong> Handles the touchmove event.</li>
+            <li><strong>ontouchend:</strong> Handles the touchend event.</li>
+        </ul>
+    </div>
+
+    <div class="summary-table">
+        <h2>Summary Table</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Event Type</th>
+                    <th>Event Listener Examples</th>
+                    <th>Event Handler Examples</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Mouse Events</td>
+                    <td>addEventListener('click', listener)</td>
+                    <td>element.onclick = handler</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>addEventListener('dblclick', listener)</td>
+                    <td>element.ondblclick = handler</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>addEventListener('mouseover', listener)</td>
+                    <td>element.onmouseover = handler</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>addEventListener('mouseout', listener)</td>
+                    <td>element.onmouseout = handler</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>addEventListener('mousemove', listener)</td>
+                    <td>element.onmousemove = handler</td>
+                </tr>
+                <tr>
+                    <td>Keyboard Events</td>
+                    <td>addEventListener('keydown', listener)</td>
+                    <td>element.onkeydown = handler</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>addEventListener('keyup', listener)</td>
+                    <td>element.onkeyup = handler</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>addEventListener('keypress', listener)</td>
+                    <td>element.onkeypress = handler</td>
+                </tr>
+                <tr>
+                    <td>Form Events</td>
+                    <td>addEventListener('submit', listener)</td>
+                    <td>element.onsubmit = handler</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>addEventListener('focus', listener)</td>
+                    <td>element.onfocus = handler</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>addEventListener('blur', listener)</td>
+                    <td>element.onblur = handler</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>addEventListener('change', listener)</td>
+                    <td>element.onchange = handler</td>
+                </tr>
+                <tr>
+                    <td>Window Events</td>
+                    <td>addEventListener('load', listener)</td>
+                    <td>window.onload = handler</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>addEventListener('resize', listener)</td>
+                    <td>window.onresize = handler</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>addEventListener('scroll', listener)</td>
+                    <td>window.onscroll = handler</td>
+                </tr>
+                <tr>
+                    <td>Touch Events</td>
+                    <td>addEventListener('touchstart', listener)</td>
+                    <td>element.ontouchstart = handler</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>addEventListener('touchmove', listener)</td>
+                    <td>element.ontouchmove = handler</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>addEventListener('touchend', listener)</td>
+                    <td>element.ontouchend = handler</td>
+                </tr>
+                <tr>
+                    <td>Custom Events</td>
+                    <td>addEventListener('customEvent', listener)</td>
+                    <td>N/A</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <a href="index.html" id="events">See How Js EventsListeners Are Used!!</a>
+
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Interaction Example</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h2>This JavaScript Assignment on Functions Operations</h2>
+            <div class="input-group">
+                <label for="num1">Number 1:</label>
+                <input type="number" id="num1">
+            </div>
+            <div class="input-group">
+                <label for="num2">Number 2:</label>
+                <input type="number" id="num2">
+            </div>
+            <div>
+                <button id="addBtn">Add</button>
+                <button id="subtractBtn">Subtract</button>
+                <button id="divideBtn">Divide</button>
+                <button id="multiplyBtn">Multiply</button>
+                <button id="clearBtn">Clear</button>
+            </div>
+            <div id="result" class="hidden"></div>
+        </div>
+
+        <div class="card">
+            <h2>This JavaScript Assignment on Functions DoM & Events</h2>
+            <form name="form" id="form" method="post">
+                <div class="input-group flex-row">
+                    <label for="gender">Gender:</label>
+                    <div class="flex" id="sex">
+                        <input type="radio" id="male" name="gender" value="male">
+                        <label for="male">Male</label>
+                        <input type="radio" id="female" name="gender" value="female">
+                        <label for="female">Female</label>
+                    </div>
+                </div>
+                <span id="gender_error" class="hidden">Gender is required!</span>
+
+                <div class="input-group flex-column">
+                    <label for="names">Names:</label>
+                    <input type="text" id="names">
+                </div>
+                <span id="name_error" class="hidden">Name is required!</span>
+
+                <div class="input-group flex-column">
+                    <label for="email">Email Address:</label>
+                    <input type="text" id="email">
+                </div>
+                <span id="email_error" class="hidden">Email is required!</span>
+
+                <div class="input-group flex-column">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password">
+                </div>
+                <span id="pass_error" class="hidden">Password is required!</span>
+
+                <div class="input-group flex-row">
+                    <label for="checkbox">View Password</label>
+                    <input type="checkbox" id="checkbox">
+                </div>
+                <div>
+                    <button id="submitBtn" type="button">Submit</button>
+                    <button id="clearFormBtn" type="button">Clear</button>
+                </div>
+                <div id="formResult" class="hidden"></div>
+            </form>
+        </div>
+    </div>
+
+    <div class="charts">
+        <div id="barchart" class="chart-card">
+            <p>Bar Chart</p>
+            <canvas id="barChart" width="400" height="300"></canvas>
+        </div>
+        <div id="piechart" class="chart-card">
+            <p>Pie Chart</p>
+            <canvas id="pieChart" width="400" height="300"></canvas>
+        </div>
+        <div id="linechart" class="chart-card">
+            <p>Line Chart</p>
+            <canvas id="lineChart" width="400" height="300"></canvas>
+        </div>
+        <div id="scatter" class="chart-card">
+            <h2>Scatter Plot</h2>
+            <canvas id="scatterChart" width="400" height="300"></canvas>
+        </div>
+    </div>
+    <a href="eventsListeners.html" id="events">View The JS Events Listeners</a>
+    <script src="validating.js"></script>
+    <script src="charts.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>
