@@ -113,8 +113,8 @@
         // Additional Event Listeners
         document.getElementById('events').addEventListener('mouseover', () => console.log('Mouse over the link'));
         document.getElementById('events').addEventListener('click', (e) => {
-            e.preventDefault();
-            alert('Link clicked!');
+           // e.preventDefault();
+            alert('Link Clicked To view The events handler in javaScript!!!!!!');
         });
         window.addEventListener('load', () => console.log('Page loaded'));
         window.addEventListener('resize', () => console.log('Window resized'));
